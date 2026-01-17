@@ -28,24 +28,16 @@ function App() {
       setError('Please enter a Product ID.');
       return;
     }
-    if (!token) {
-        setError('Please set the API token first.');
-        return;
-    }
 
     setLoading(true);
     setError('');
     setProduct(null);
 
     try {
-      const response = await axios.get(`https://api.uy-joy.uz/api/public/product/${productId}`, {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
-      });
+      const response = await axios.get(`https://api.uy-joy.uz/api/public/product/${productId}`);
       setProduct(response.data);
     } catch (err) {
-      setError('Failed to fetch product data. Please check the Product ID and your token.');
+      setError('Failed to fetch product data. Please check the Product ID.');
       console.error(err);
     } finally {
       setLoading(false);
