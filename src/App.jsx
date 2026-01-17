@@ -34,7 +34,7 @@ function App() {
     setProduct(null);
 
     try {
-      const response = await axios.get(`https://api.uy-joy.uz/api/public/product/${productId}`);
+      const response = await axios.get(`/api/public/product/${productId}`);
       setProduct(response.data);
     } catch (err) {
       setError('Failed to fetch product data. Please check the Product ID.');
