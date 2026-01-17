@@ -10,7 +10,6 @@ export default defineConfig({
         target: 'https://api.uy-joy.uz',
         changeOrigin: true,
         secure: false,
-        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },
